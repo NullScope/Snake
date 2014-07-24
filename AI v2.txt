@@ -1,0 +1,203 @@
+		currentX = enemy.getFirst().getX()-vecFruit.get(markedI).getX();
+		currentY = enemy.getFirst().getY()-vecFruit.get(markedI).getY();
+		
+		if(currentX < 0){
+			currentX = currentX*-1;
+		}
+		if(currentY < 0){
+			currentY = currentY*-1;
+		}
+		
+		if(currentX < currentY){
+			if(enemy.getFirst().getX()-vecFruit.get(markedI).getX() < 0){
+				if(enemyMove != 4 && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'D'){
+					enemyMove = 3;
+				}else{
+					if(enemyMove != 3 && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'D'){
+						enemyMove = 4;
+					}else{
+						if(enemyMove != 1 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'D'){
+							enemyMove = 2;
+						}else{
+							if(enemyMove != 2 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'D'){
+								enemyMove = 1;
+							}
+						}
+					}
+				}
+			}else{
+				if(enemy.getFirst().getX()-vecFruit.get(markedI).getX() > 0){
+					if(enemyMove != 3 && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'D'){
+						enemyMove = 4;
+					}else{
+						if(enemyMove != 4 && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'D'){
+							enemyMove = 3;
+						}else{
+							if(enemyMove != 1 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'D'){
+								enemyMove = 2;
+							}else{
+								if(enemyMove != 2 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'D'){
+									enemyMove = 1;
+								}
+							}
+						}
+					}
+				}else{
+					if(enemy.getFirst().getY()-vecFruit.get(markedI).getY() < 0){
+						if(enemyMove != 1 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'D'){
+							enemyMove = 2;
+						}else{
+							if(enemyMove != 2 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'D'){
+								enemyMove = 1;
+							}else{
+								if(enemyMove != 3 && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'D'){
+									enemyMove = 4;
+								}else{
+									if(enemyMove != 4 && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'D'){
+										enemyMove = 3;
+									}
+								}
+							}
+						}
+					}else{
+						if(enemy.getFirst().getY()-vecFruit.get(markedI).getY() > 0){
+							if(enemyMove != 2 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'D'){
+								enemyMove = 1;
+							}else{
+								if(enemyMove != 1 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'D'){
+									enemyMove = 2;
+								}else{
+									if(enemyMove != 3 && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'D'){
+										enemyMove = 4;
+									}else{
+										if(enemyMove != 4 && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'D'){
+											enemyMove = 3;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}else{
+			if(currentX > currentY){
+				if(enemy.getFirst().getY()-vecFruit.get(markedI).getY() < 0){
+					if(enemyMove != 1 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'D'){
+						enemyMove = 2;
+					}else{
+						if(enemyMove != 2 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'D'){
+							enemyMove = 1;
+						}else{
+							if(enemyMove != 3 && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'D'){
+								enemyMove = 4;
+							}else{
+								if(enemyMove != 4 && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'D'){
+									enemyMove = 3;
+								}
+							}
+						}
+					}
+				}else{
+					if(enemy.getFirst().getY()-vecFruit.get(markedI).getY() > 0){
+						if(enemyMove != 2 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'D'){
+							enemyMove = 1;
+						}else{
+							if(enemyMove != 1 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'D'){
+								enemyMove = 2;
+							}else{
+								if(enemyMove != 3 && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'D'){
+									enemyMove = 4;
+								}else{
+									if(enemyMove != 4 && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'D'){
+										enemyMove = 3;
+									}
+								}
+							}
+						}
+					}else{
+						if(enemy.getFirst().getX()-vecFruit.get(markedI).getX() < 0){
+							if(enemyMove != 4 && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'D'){
+								enemyMove = 3;
+							}else{
+								if(enemyMove != 3 && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'D'){
+									enemyMove = 4;
+								}else{
+									if(enemyMove != 2 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'D'){
+										enemyMove = 1;
+									}else{
+										if(enemyMove != 1 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'D'){
+											enemyMove = 2;
+										}
+									}
+								}
+							}
+						}else{
+							if(enemy.getFirst().getX()-vecFruit.get(markedI).getX() > 0){
+								if(enemyMove != 3 && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()-1][enemy.getFirst().getY()] != 'D'){
+									enemyMove = 4;
+								}else{
+									if(enemyMove != 4 && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'w' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'H' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'S' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'T' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'B' && matrix[enemy.getFirst().getX()+1][enemy.getFirst().getY()] != 'D'){
+										enemyMove = 3;
+									}else{
+										if(enemyMove != 2 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()-1] != 'D'){
+											enemyMove = 1;
+										}else{
+											if(enemyMove != 1 && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'w' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'H' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'S' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'T' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'B' && matrix[enemy.getFirst().getX()][enemy.getFirst().getY()+1] != 'D'){
+												enemyMove = 2;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}else{
+				if(enemy.getFirst().getX()-vecFruit.get(markedI).getX() > 0){
+					if(enemy.getFirst().getY()-vecFruit.get(markedI).getY() > 0){
+						if(temp == 1 && enemyMove != 3){
+							enemyMove = 4;
+						}else{
+							if(enemyMove != 2){
+								enemyMove = 1;
+							}
+						}
+					}else{
+						if(enemy.getFirst().getY()-vecFruit.get(markedI).getY() < 0){
+							if(temp == 1 && enemyMove != 3){
+								enemyMove = 4;
+							}else{
+								if(enemyMove != 1){
+									enemyMove = 2;
+								}
+							}
+								
+						}
+					}
+				}else{
+					if(enemy.getFirst().getX()-vecFruit.get(markedI).getX() > 0){
+						if(enemy.getFirst().getY()-vecFruit.get(markedI).getY() > 0){
+							if(temp == 1 && enemyMove != 3){
+								enemyMove = 4;
+							}else{
+								if(enemyMove != 2){
+									enemyMove = 1;
+								}
+							}
+						}else{
+							if(enemy.getFirst().getY()-vecFruit.get(markedI).getY() < 0){
+								if(temp == 1 && enemyMove != 3){
+									enemyMove = 4;
+								}else{
+									if(enemyMove != 1){
+										enemyMove = 2;
+									}
+								}
+									
+							}
+						}
+					}
+				}
+			}
+		}

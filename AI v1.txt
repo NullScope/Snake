@@ -1,0 +1,47 @@
+	if(enemy.getFirst().getX()-vecFruit.get(markedI).getX() < 0){
+			if(enemy.getFirst().getY()-vecFruit.get(markedI).getY() > 0){	
+				if(temp == 1 && enemyMove != 2){
+					enemyMove = 1;
+				}else{
+					if(enemyMove != 4){
+					enemyMove = 3;
+					}
+				}
+			}else{
+				if(enemy.getFirst().getY()-vecFruit.get(markedI).getY() < 0){	
+					if(temp == 1 && enemyMove != 1){
+						enemyMove = 2;
+					}else{
+						if(enemyMove != 4){
+						enemyMove = 3;
+						}
+					}
+				}else{
+					enemyMove = 3;
+				}
+			}
+		}else{
+			if(enemy.getFirst().getX()-vecFruit.get(markedI).getX() > 0){
+				if(enemy.getFirst().getY()-vecFruit.get(markedI).getY() > 0){	
+					if(temp == 1 && enemyMove != 2){
+						enemyMove = 1;
+					}else{
+						if(enemyMove != 3){
+						enemyMove = 4;
+						}
+					}
+				}else{
+					if(enemy.getFirst().getY()-vecFruit.get(markedI).getY() < 0){	
+						if(temp == 1 && enemyMove != 1){
+							enemyMove = 2;
+						}else{
+							if(enemyMove != 3){
+							enemyMove = 4;
+							}
+						}
+					}else{
+						enemyMove = 4;
+					}
+				}
+			}
+		}
