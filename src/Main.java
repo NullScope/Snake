@@ -117,7 +117,7 @@ public class Main extends Canvas implements KeyListener{
 	private static LinkedList<Body> enemy = new LinkedList<Body>();
 
 	private static char[][] matrix = new char[largura][altura];
-	private static Object[] options = {"Campanha","Niveis Personalizados", "Sair"};
+	private static Object[] options = {"Campaign","Custom Levels", "Exit"};
 	private static Vector<Fruit> vecFruit = new Vector<Fruit>();
 	
 	private static JFrame janela = new JFrame();
@@ -125,7 +125,7 @@ public class Main extends Canvas implements KeyListener{
 	private static JPanel painel2 = new JPanel();
 
 	public Main(){
-		optionMenu("Bem Vindo ao Snake!");
+		optionMenu("Welcome to Snake!");
 		options[0] = "Continuar Campanha";
 		janela.setTitle("SNAKE || PLAYER SCORE: "+score+" || ENEMY SCORE: "+enemyScore);
 		painel.setBounds(0, 0, largura, altura);
@@ -184,15 +184,15 @@ public class Main extends Canvas implements KeyListener{
 				if(score < points){
 					if (!moveBody() || cobra.size() < 2 || enemyScore >= points) {
 						if(cobra.size() < 2){
-							options[0] = "Tentar novamente";
+							options[0] = "Try again";
 							optionMenu("Gameover! \nSCORE: "+score);
 						}else{
 							
-							options[0] = "Tentar novamente";
+							options[0] = "Try again";
 							if(enemyScore >= points){
-								optionMenu("Gameover! A cobra inimiga ganhou\nSCORE: "+score);
+								optionMenu("Gameover! The enemy snake won\nSCORE: "+score);
 							}else{
-								optionMenu("Gameover! A cobra bateu numa parede ou na cobra inimiga\nSCORE: "+score);
+								optionMenu("Gameover! You hit a wall or the enemy snake\nSCORE: "+score);
 							}
 						}
 					}else{
@@ -201,10 +201,10 @@ public class Main extends Canvas implements KeyListener{
 						}
 					}
 				}else{
-					options[0] = "Próximo nível";
+					options[0] = "Next Level";
 					loadType = 0;
 					campaignLevel += 1;
-					optionMenu("Parabéns, passaste o nivel!");
+					optionMenu("Congratualations");
 				}
 				paint(getGraphics());
 				try {
